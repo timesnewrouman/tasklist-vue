@@ -1,4 +1,7 @@
-# tasklist-vue
+# TaskList
+###### Версия 1.0.0
+#### Демо https://timesnewrouman.github.io/tasklist-vue
+Учебный проект, реализованный с целью получения практики применения Vue.js.
 
 ## Project setup
 ```

@@ -14,9 +14,11 @@ export default {
   data() {
     return {
       tasks: [
-        { id: 1, title: "xxx", completed: false },
-        { id: 2, title: "yyy", completed: false },
-        { id: 3, title: "zzz", completed: false },
+        { id: 1, title: "Сходить в магазин", completed: false },
+        { id: 2, title: "Постирать джинсы", completed: false },
+        { id: 3, title: "Погладить рубашку", completed: false },
+        { id: 4, title: "Помыть посуду", completed: false },
+        { id: 5, title: "Приготовить ужин", completed: false },
       ],
     };
   },

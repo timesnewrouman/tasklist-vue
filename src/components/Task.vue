@@ -6,7 +6,7 @@
       <strong>{{ index + 1 }}</strong>
       {{ task.title }}
     </span>
-    <button class="remove" @click="$emit('remove-task', task.id)">&times;</button>
+    <button class="remove" @click="$emit('remove-task', task.id)"></button>
   </li>
 </template>
 
@@ -37,10 +37,12 @@ input {
 }
 
 .remove {
-  background-color: red;
-  color: #fff;
-  border-radius: 50%;
-  font-weight: bold;
+  background-image: url(../images/delete-icon.png);
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background-color: white;
 }
 
 .done {
