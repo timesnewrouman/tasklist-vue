@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div id="nav">
+      <router-link to="/">Планы на день</router-link>|
+      <router-link to="/tasksforyear">Планы на год</router-link>
+    </div>
     <div class="header">
       <h1 class="header__text">Список задач</h1>
       <img class="header__image" src="./images/exclamation-mark.png" />
@@ -20,7 +24,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 15px;
 }
 
 #nav a {

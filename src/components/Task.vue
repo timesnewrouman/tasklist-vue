@@ -1,7 +1,6 @@
 <template>
   <li>
     <span v-bind:class="{done: task.completed}">
-      <!-- условие добавления класса done-->
       <input type="checkbox" @change="task.completed = !task.completed" />
       <strong>{{ index + 1 }}</strong>
       {{ task.title }}

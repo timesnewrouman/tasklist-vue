@@ -5,13 +5,18 @@ const routes = [
   {
     path: '/',
     name: 'Main',
-    component: Main
+    component: Main,
+  },
+  {
+    path: '/tasksforyear',
+    name: 'TasksForYear',
+    component: () => import('../views/TasksForYear.vue'),
   },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 })
 
-export default router
+export default router;
