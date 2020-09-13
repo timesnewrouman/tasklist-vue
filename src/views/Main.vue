@@ -1,8 +1,17 @@
 <template>
   <div class="main">
     <AddTask @add-task="addTask" />
+    <select class="select" v-model="filter">
+      <option value="all">Все задачи</option>
+      <option value="completed">Выполненные задачи</option>
+      <option value="not-completed">Невыполненные задачи</option>
+    </select>
     <Loader v-if="loading" />
-    <TaskList v-else-if="tasks.length" v-bind:tasks="tasks" @remove-task="removeTask" />
+    <TaskList
+      v-else-if="filteredTasks.length"
+      v-bind:tasks="filteredTasks"
+      @remove-task="removeTask"
+    />
     <p v-else>Список пуст</p>
   </div>
 </template>
@@ -18,6 +27,7 @@ export default {
     return {
       tasks: [],
       loading: true,
+      filter: "all",
     };
   },
   mounted() {
@@ -32,7 +42,22 @@ export default {
         { id: 7, title: "Пропылесосить", completed: true },
       ];
       this.loading = false;
-    }, 500);
+    }, 1000);
+  },
+  computed: {
+    filteredTasks() {
+      if (this.filter === "all") {
+        return this.tasks;
+      }
+
+      if (this.filter === "completed") {
+        return this.tasks.filter((x) => x.completed);
+      }
+
+      if (this.filter === "not-completed") {
+        return this.tasks.filter((x) => !x.completed);
+      }
+    },
   },
   components: {
     TaskList,
@@ -49,3 +74,16 @@ export default {
   },
 };
 </script>
+
+<style>
+.main {
+  position: relative;
+}
+
+.select {
+  position: absolute;
+  padding: 1px;
+  top: 0;
+  right: 0;
+}
+</style>
