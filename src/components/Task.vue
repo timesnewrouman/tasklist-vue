@@ -1,7 +1,11 @@
 <template>
   <li>
     <span v-bind:class="{ done: task.completed }">
-      <input type="checkbox" @change="task.completed = !task.completed" />
+      <input
+        type="checkbox"
+        @change="task.completed = !task.completed"
+        v-bind:checked="task.completed"
+      />
       <strong>{{ index + 1 }}</strong>
       {{ task.title }}
     </span>
