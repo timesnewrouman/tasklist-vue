@@ -51,11 +51,11 @@ export default {
       }
 
       if (this.filter === "completed") {
-        return this.tasks.filter((x) => x.completed);
+        return this.tasks.filter((tasks) => tasks.completed);
       }
 
       if (this.filter === "not-completed") {
-        return this.tasks.filter((x) => !x.completed);
+        return this.tasks.filter((tasks) => !tasks.completed);
       }
     },
   },
